@@ -20,7 +20,7 @@ if st.session_state.stage == "start":
             st.session_state.stage = "hole"
         elif choice.lower() == "left":
             st.session_state.stage = "beach"
-        st.experimental_rerun()
+        st.rerun()
 
 # اگر چپ رو انتخاب کنه
 elif st.session_state.stage == "beach":
@@ -33,7 +33,7 @@ elif st.session_state.stage == "beach":
             st.session_state.stage = "island"
         else:
             st.session_state.stage = "shark"
-        st.experimental_rerun()
+        st.rerun()
 
 # مرحله نهایی در جزیره
 elif st.session_state.stage == "island":
@@ -46,7 +46,7 @@ elif st.session_state.stage == "island":
             st.session_state.stage = "win"
         else:
             st.session_state.stage = "trap"
-        st.experimental_rerun()
+        st.rerun()
 
 # پیام‌های مربوط به پایان بازی
 elif st.session_state.stage == "hole":
@@ -66,4 +66,4 @@ if st.session_state.stage != "start":
     if st.button("Play Again"):
         for key in list(st.session_state.keys()):
             del st.session_state[key]
-        st.experimental_rerun()
+        st.rerun()
